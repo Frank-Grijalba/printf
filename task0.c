@@ -19,9 +19,8 @@ int _putchar(char c)
  */
 int print_percent(char *str)
 {
-	if(str != NULL)
-	write(1, "%", 1);
-	
+	str++;
+	_putchar('%');
 	return (1);
 }
 
