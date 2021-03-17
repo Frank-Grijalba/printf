@@ -1,0 +1,40 @@
+.TH _printf 1 "16 March 2021" "0.1" "User Manual"
+.SH NAME
+.B _printf - format data and print output into stdout
+.SH SYNOPSIS
+.IP
+.I #include "holberton.h"
+.IP
+.I int _printf(const char *format, ...);
+.IP
+.I _printf [FORMAT][ARGUMENT]...
+
+.SH DESCRIPTION
+
+The function \fB_printf()\fP produces output according to the format specifiers provided below. Each argument passed into _printf is written out into stdout, the standard output stream. The format controls the output in _printf.
+
+.SH RETURN VALUE
+Upon a successful return, \fB_printf()\fP will return the number of characters printed. Null byte used to end string outputs is excluded. _printf will return an exit status of -1 upon failure.
+
+.SH FORMAT OF FUNCTION
+The format of _printf is a character string and can include zero or more format specifiers, each matching zero or more arguments being passed in. Each format specifier begans with "%" followed by the character to the specific format specifier such as "%s". By default, arguments passed in must followed the order of the each format specifier. For example:
+.IP 
+.B _printf("This is a %s of %d", "example", 2);
+.IP
+.B $ "This is a example of 2"
+.SH FORMAT SPECIFIERS
+.IP s
+The argument passed for specifier "%s" is a string of char *, which will be a pointer to an array of character type that points to a string. Characters from the array are written up to (but not including ) the terminating null bye ('/0').
+does not take any options. However, you can supply studentname.
+.IP c
+The argument passed for specifier "%c" is of type int. which is then converted to an unsigned char, which is then written. 
+.IP %
+The argument passed is not converted and will simply be written as "%". To write out "%", format must be "%%". 
+.IP d,i
+The argument passed for specifiers "%d" and "%i" is an int argument converted into signed decimal notation. In _printf, the specifiers are handled the same way. The precision functionality, the number of digits that appears in beginning, is still in development and will be added at an later time.
+.SH BUGS
+No known bugs.
+.SH DEVELOPER(s) NOTES
+This _printf function currently does not support special flags [+ , - , `, \0 , #], field, width or precision.
+.SH AUTHORS
+Pedro Martinez, Frank Grijalba
